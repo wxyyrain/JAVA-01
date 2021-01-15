@@ -1,0 +1,71 @@
+Compiled from "Hello.java"
+public class Hello {
+  public Hello();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+	   // 1(int，对应的是变量j)值入操作数栈
+       0: iconst_1
+	   // 将栈顶（此时栈顶是j）int类型值保存到局部变量1中
+       1: istore_1
+	   // 0(int，对应的是刚开始的i)值入栈
+       2: iconst_0
+	   // 将栈顶int（此时栈顶是i）类型值保存到局部变量2中
+       3: istore_2
+	   // 从局部变量2（也就是i）中装载int类型值入操作数栈
+       4: iload_2
+	   // 将10入操作数栈
+       5: bipush        10
+	   // 比较i 与 10 的大小
+       7: if_icmpge     29
+	   // i入操作数栈
+      10: iload_2
+	  // j入操作数栈
+      11: iload_1
+	  // 比较i 和 j
+      12: if_icmpne     23
+	  // 获得静态变量，对应System.out
+      15: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+	  // 常量池的常量入栈
+      18: ldc           #3                  // String hello!!!
+	  // 调用方法，对应println()
+      20: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+	  // i + 1
+      23: iinc          2, 1
+	  // 到第四行
+      26: goto          4
+	  // j入操作数栈
+      29: iload_1
+	  // 1入操作数栈
+      30: iconst_1
+	  // 相加
+      31: iadd
+	  // 保存结果到局部变量表2
+      32: istore_2
+	  // j入操作数栈
+      33: iload_1
+	  // 1入操作数栈
+      34: iconst_1
+	  // 相减
+      35: isub
+	  // 保存结果到局部变量表3
+      36: istore_3
+	  // j入操作数栈
+      37: iload_1
+	  // 2入操作数栈
+      38: iconst_2
+	  // 乘法
+      39: imul
+	  // 保存结果到局部变量表4
+      40: istore        4
+      42: iload_1
+      43: iconst_2
+      44: idiv
+	   // 保存结果到局部变量表5
+      45: istore        5
+      47: return
+}
