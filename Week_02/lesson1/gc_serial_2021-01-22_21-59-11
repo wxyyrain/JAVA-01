@@ -1,0 +1,97 @@
+// JVM信息
+Java HotSpot(TM) 64-Bit Server VM (25.181-b13) for windows-amd64 JRE (1.8.0_181-b13), built on Jul  7 2018 04:01:33 by "java_re" with MS VC++ 10.0 (VS2010)
+// 内存分页，物理内存大小等
+Memory: 4k page, physical 8305456k(3686660k free), swap 16609052k(11073436k free)
+// 一些命令行参数
+CommandLine flags: -XX:InitialHeapSize=536870912 -XX:MaxHeapSize=536870912 -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:-UseLargePagesIndividualAllocation -XX:+UseSerialGC 
+
+// gc后发现年轻代相同年龄对象总和大于survivor一半，这些对象都进入老年代，老年代使用率变高
+0.266: [GC (Allocation Failure) 0.266: [DefNew: 139776K->17471K(157248K), 0.0194148 secs] 139776K->48111K(506816K), 0.0195962 secs] [Times: user=0.02 sys=0.00, real=0.02 secs] 
+// 年轻代对象到了老年代，老年代使用率变高
+0.313: [GC (Allocation Failure) 0.314: [DefNew: 157247K->17471K(157248K), 0.0262136 secs] 187887K->91587K(506816K), 0.0263019 secs] [Times: user=0.03 sys=0.00, real=0.03 secs] 
+// 年轻代对象到了老年代，老年代使用率变高
+0.368: [GC (Allocation Failure) 0.368: [DefNew: 157247K->17471K(157248K), 0.0258903 secs] 231363K->143615K(506816K), 0.0260014 secs] [Times: user=0.00 sys=0.01, real=0.03 secs] 
+// 年轻代对象到了老年代，老年代使用率变高
+0.422: [GC (Allocation Failure) 0.422: [DefNew: 157247K->17471K(157248K), 0.0209569 secs] 283391K->191917K(506816K), 0.0210474 secs] [Times: user=0.02 sys=0.00, real=0.02 secs] 
+// 年轻代对象到了老年代，老年代使用率变高
+0.467: [GC (Allocation Failure) 0.467: [DefNew: 156929K->17470K(157248K), 0.0206809 secs] 331375K->236328K(506816K), 0.0207692 secs] [Times: user=0.01 sys=0.00, real=0.02 secs] 
+// 年轻代对象到了老年代，老年代使用率变高
+0.514: [GC (Allocation Failure) 0.514: [DefNew: 157246K->17471K(157248K), 0.0198462 secs] 376104K->280558K(506816K), 0.0199250 secs] [Times: user=0.00 sys=0.02, real=0.02 secs] 
+// 年轻代对象到了老年代，老年代使用率变高
+0.556: [GC (Allocation Failure) 0.556: [DefNew: 157247K->17470K(157248K), 0.0223498 secs] 420334K->330549K(506816K), 0.0224378 secs] [Times: user=0.00 sys=0.02, real=0.02 secs] 
+// minor gc后，老年代空间不够年轻代对象过来，进行一次major gc
+0.599: [GC (Allocation Failure) 0.599: [DefNew: 157246K->157246K(157248K), 0.0000136 secs]0.599: [Tenured: 313078K->268991K(349568K), 0.0445489 secs] 470325K->268991K(506816K), [Metaspace: 2679K->2679K(1056768K)], 0.0446552 secs] [Times: user=0.05 sys=0.00, real=0.05 secs] 
+// 老年代使用率变高
+0.665: [GC (Allocation Failure) 0.665: [DefNew: 139776K->17471K(157248K), 0.0078332 secs] 408767K->312749K(506816K), 0.0079175 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+// 老年代使用率变高
+0.695: [GC (Allocation Failure) 0.695: [DefNew: 157211K->17470K(157248K), 0.0149088 secs] 452490K->354010K(506816K), 0.0150070 secs] [Times: user=0.00 sys=0.02, real=0.02 secs] 
+// minor gc后，老年代空间不够年轻代对象过来，进行一次major gc。老年代清理掉一部分，又进来一部分，所以可能使用率变化不明显
+0.734: [GC (Allocation Failure) 0.734: [DefNew: 157246K->157246K(157248K), 0.0000176 secs]0.734: [Tenured: 336539K->311810K(349568K), 0.0521490 secs] 493786K->311810K(506816K), [Metaspace: 2679K->2679K(1056768K)], 0.0522733 secs] [Times: user=0.05 sys=0.00, real=0.05 secs] 
+// minor gc后，老年代空间不够年轻代对象过来，进行一次major gc
+0.810: [GC (Allocation Failure) 0.810: [DefNew: 139173K->139173K(157248K), 0.0000176 secs]0.810: [Tenured: 311810K->311763K(349568K), 0.0495927 secs] 450983K->311763K(506816K), [Metaspace: 2679K->2679K(1056768K)], 0.0497158 secs] [Times: user=0.05 sys=0.00, real=0.05 secs] 
+// minor gc后，老年代空间不够年轻代对象过来，进行一次major gc
+0.883: [GC (Allocation Failure) 0.883: [DefNew: 139752K->139752K(157248K), 0.0000198 secs]0.883: [Tenured: 311763K->298688K(349568K), 0.0534433 secs] 451515K->298688K(506816K), [Metaspace: 2679K->2679K(1056768K)], 0.0535720 secs] [Times: user=0.05 sys=0.00, real=0.05 secs] 
+// 老年代使用率变高
+0.959: [GC (Allocation Failure) 0.959: [DefNew: 139737K->17470K(157248K), 0.0085245 secs] 438425K->343357K(506816K), 0.0086272 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+// minor gc后，老年代空间不够年轻代对象过来，进行一次major gc
+0.991: [GC (Allocation Failure) 0.991: [DefNew: 157246K->157246K(157248K), 0.0000165 secs]0.991: [Tenured: 325887K->339583K(349568K), 0.0465257 secs] 483133K->339583K(506816K), [Metaspace: 2679K->2679K(1056768K)], 0.0466397 secs] [Times: user=0.03 sys=0.02, real=0.05 secs] 
+// minor gc后，老年代空间不够年轻代对象过来，进行一次major gc
+1.060: [GC (Allocation Failure) 1.060: [DefNew: 139776K->139776K(157248K), 0.0000147 secs]1.060: [Tenured: 339583K->349467K(349568K), 0.0556723 secs] 479359K->354369K(506816K), [Metaspace: 2679K->2679K(1056768K)], 0.0557647 secs] [Times: user=0.06 sys=0.00, real=0.06 secs] 
+// full gc
+1.141: [Full GC (Allocation Failure) 1.142: [Tenured: 349467K->349334K(349568K), 0.0548175 secs] 506665K->363378K(506816K), [Metaspace: 2679K->2679K(1056768K)], 0.0549003 secs] [Times: user=0.06 sys=0.00, real=0.06 secs] 
+
+
+创建对象速率越高，越容易引起full gc。因为大量对象，从年轻代到年老代，很快会使年老代内存不够用，从而触发full gc。
+
+Heap
+ def new generation   total 157248K, used 19770K [0x00000000e0000000, 0x00000000eaaa0000, 0x00000000eaaa0000)
+  eden space 139776K,  14% used [0x00000000e0000000, 0x00000000e134e840, 0x00000000e8880000)
+  from space 17472K,   0% used [0x00000000e8880000, 0x00000000e8880000, 0x00000000e9990000)
+  to   space 17472K,   0% used [0x00000000e9990000, 0x00000000e9990000, 0x00000000eaaa0000)
+ tenured generation   total 349568K, used 349334K [0x00000000eaaa0000, 0x0000000100000000, 0x0000000100000000)
+   the space 349568K,  99% used [0x00000000eaaa0000, 0x00000000fffc5af0, 0x00000000fffc5c00, 0x0000000100000000)
+ Metaspace       used 2685K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 289K, capacity 386K, committed 512K, reserved 1048576K
+  
+  
+
+第一行（Minor GC）：0.266: [GC (Allocation Failure) 0.266: [DefNew: 139776K->17471K(157248K), 0.0194148 secs] 139776K->48111K(506816K), 0.0195962 secs] [Times: user=0.02 sys=0.00, real=0.02 secs] 
+
+0.266：表示GC时间开始的时间点。
+
+GC：表明这是一次小型GC；Allocation Failure：表示触发GC的原因，是由于对象分配失败，既年轻代中没有空间来存放新对象引起的。
+
+DefNew：表示垃圾收集器的名称，这个名称表示：年轻代使用的单线程、标记复制、SWT垃圾收集器。139776K->17471K：表示垃圾收集之前和之后的年轻代使用量。(157248K)：表示年轻代总空间大小。
+
+139776K->48111K：表示垃圾收集前后整个堆内存的使用情况。(506816K)表示堆内存空间大小。
+
+0.0195962 secs：表示GC持续的时间，以秒为单位。
+
+Times: user=0.02 sys=0.00, real=0.02 secs：user表示所有GC线程消耗的CPU时间；sys表示系统调用和系统等待的时间；real表示应用程序暂停的时间。串行收集器：real = user + sys。
+
+GC暂停时间20毫秒，对大部分系统可以接受，对某些实时游戏、高频交易业务，比较难接受。
+
+此次回收之前，堆内存139776K，年轻代使用了139776K，可以算出GC之前老年代未使用；GC后年轻代由139776K变为了17471K，但整个堆的内存还是用了48111K，说明有48111K-17471K在老年代。
+
+主要关注点：GC暂停时间（系统延迟）；GC之后内存使用量（GC效率）
+
+
+第7行：0.599: [GC (Allocation Failure) 0.599: [DefNew: 157246K->157246K(157248K), 0.0000136 secs]0.599: [Tenured: 313078K->268991K(349568K), 0.0445489 secs] 470325K->268991K(506816K), [Metaspace: 2679K->2679K(1056768K)], 0.0446552 secs] [Times: user=0.05 sys=0.00, real=0.05 secs] 
+
+[DefNew: 157246K->157246K(157248K), 0.0000136 secs]：内存没变化，时间消耗很少，基本上没怎么处理年轻代。
+
+Tenured：表示单线程的STW垃圾收集器，使用标记-清除-整理算法。313078K->268991K(349568K)：表示老年代垃圾回收前后的使用情况以及老年代的大小。0.0445489 secs表示清理老年代用的时间。
+
+470325K->268991K(506816K)表示堆内存在垃圾回收前后的使用情况以及堆内存的大小。
+
+[Metaspace: 2679K->2679K(1056768K)]：表示元数据区的变化情况，没啥变化。
+
+[Times: user=0.05 sys=0.00, real=0.05 secs] ：单线程的回收器，总用用了0.05秒。
+
+GC之后老年代使用率：268991K/349568K = 76.9%。GC之后内存使用还是下降了，需要继续观察。
+
+GC后老年代的使用在260M，耗时50ms，如果内存扩大10倍，耗时可能也会变成500ms，对系统性能影响极大。所以服务端一般不适用串行GC。
+
+此次Minor gc触发了full gc，猜测是因为minor gc时，老年代空间不足以容纳年轻代的对象，导致full gc。
+
+
