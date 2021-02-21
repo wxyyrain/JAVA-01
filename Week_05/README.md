@@ -5,7 +5,7 @@
 
 ## 第10节课作业实践
 #### 3. （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。
-[实现](https://github.com/wxyyrain/spring-study/tree/master/myService-springboot-starter)
+[简单实现](https://github.com/wxyyrain/spring-study/tree/master/myService-springboot-starter)
 #### 6. （必做）研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：
 - 1）使用 JDBC 原生接口，实现数据库的增删改查操作。
 [statement实现](https://github.com/wxyyrain/JAVA-01/blob/main/Week_05/jdbc-test/src/main/java/org/example/StatementUsage.java)
