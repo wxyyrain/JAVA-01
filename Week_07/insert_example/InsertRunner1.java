@@ -42,8 +42,7 @@ public class InsertRunner1 {
                 "(`orderno`, `total_amount`, `pay_amount`, `u_id`, `state`, `pay_time`, `end_time`, `createtime`, " +
                 "`updatetime`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         for (int i = 0; i < 1000000; i++) {
-            int j = 1000000 - i;
-            preparedStatement.setString(1, String.valueOf(j));
+            preparedStatement.setString(1, String.valueOf(i));
             preparedStatement.setDouble(2, 0D);
             preparedStatement.setDouble(3, 0D);
             preparedStatement.setLong(4, 0L);
