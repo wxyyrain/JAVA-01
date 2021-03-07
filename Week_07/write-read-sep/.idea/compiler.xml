@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="v2" />
+        <module name="v1" />
+        <module name="common-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-service" target="1.8" />
+      <module name="v1" target="1.8" />
+      <module name="v2" target="1.8" />
+      <module name="write-read-sep" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common-service" options="-parameters" />
+      <module name="v1" options="-parameters" />
+      <module name="v2" options="-parameters" />
+      <module name="write-read-sep" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.CatMapper">
+    <select id="deleteByPrimaryKey" resultType="java.lang.Integer">
+        select 1
+    </select>
+
+    <insert id="insert">
+        INSERT INTO `cat` ( `age`, `name`) VALUES ( '1', '2');
+    </insert>
+
+    <select id="insertSelective" resultType="java.lang.Integer">
+        select 1
+    </select>
+
+    <select id="selectByPrimaryKey" resultType="com.example.pojo.Cat">
+        select * from cat limit 1;
+    </select>
+
+    <select id="updateByPrimaryKeySelective" resultType="java.lang.Integer">
+        select 1
+    </select>
+
+    <select id="updateByPrimaryKey" resultType="java.lang.Integer">
+        select 1
+    </select>
+
+</mapper>
