@@ -23,4 +23,6 @@
 ## 第14节课作业实践
 
 ### 2、（必做）读写分离-动态切换数据源版本1.0
+[AbstractRoutingDataSource实现](https://github.com/wxyyrain/JAVA-01/tree/main/Week_07/write-read-sep/v1)
 ### 3、（必做）读写分离-数据库框架版本2.0
+[shardingsphere jdbc starter实现](https://github.com/wxyyrain/JAVA-01/tree/main/Week_07/write-read-sep/v1)
